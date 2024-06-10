@@ -100,9 +100,33 @@
 - For FreeBSD Packages: sudo pkg update
 - For FreeBSD Ports: sudo portsnap fetch update
 
+## Docker Networks
+
+- **docker network ls:** shows networks
+- **docker network inspect:** inspect networks
+- **docker network create --driver:**  create a network
+- **docker network connect:** connect container to network
+- **docker network disconnect:** disconnect container from network
+- bridge network is default network that connects to firewall
+- Create apps so frontend/backend are in same docker network!
+  - Their intercommunication never leaves the host
+  - All externally exposed ports are closed by default
+
+### DNS and how it Effects Containers
+
+- DNS is key to inter-container communication
+- Cannot rely on IPAddresses to communicate since they are too dynamic
+- Docker uses container names as host names for communication
+- 
+
+## Review
+
+- Nat types, ports, and interfaces
+
 ## Resources
 
 - [Docker Internals](https://www.youtube.com/watch?v=sK5i-N34im8&list=PLBmVKD7o3L8v7Kl_XXh3KaJl9Qw2lyuFl)
 - [Docker Mac Commands](https://www.bretfisher.com/docker-for-mac-commands-for-getting-into-local-docker-vm/)
 - [Docker Windows Commands](https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm/)
 - [Package Management Essentials](https://www.digitalocean.com/community/tutorials/package-management-basics-apt-yum-dnf-pkg)
+- [Round Robin DNS](https://en.wikipedia.org/wiki/Round-robin_DNS)
